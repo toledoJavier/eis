@@ -5,9 +5,11 @@ class Chopper
   end
 
   def sum(array)
-    if array.empty?
-    	then 'vacio'
-    else 'uno'
+  	numbers_s= ['vacio','uno',nil,nil,'cuatro']
+  	suma= array.reduce :+ 
+    if suma.nil?
+    	then numbers_s[0]
+    else numbers_s[suma]
     end
   end
 end
