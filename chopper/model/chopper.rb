@@ -5,11 +5,11 @@ class Chopper
   end
 
   def sum(array)
-  	numbers_s= ['vacio','uno',nil,nil,'cuatro']
+  	numbers_s= ['vacio','uno',nil,nil,'cuatro',nil,nil,nil,'ocho','nueve']
   	suma= array.reduce :+ 
     if suma.nil?
     	then numbers_s[0]
-    else numbers_s[suma]
+    else suma.to_s.split(//).map {|x| numbers_s[x.to_i]}.join(',')
     end
   end
 end
