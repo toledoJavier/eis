@@ -14,6 +14,6 @@ class Chopper
   def sum(array)
   	digitos= array.sum.to_array_i
   	(digitos.length == 3)? 'demasiado grande' :
-      (digitos.map {|x| @numbers_s[x]}.join(','))
+      digitos.map {|x| @numbers_s[x]}.join(',')
   end
 end
