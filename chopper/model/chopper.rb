@@ -1,5 +1,5 @@
 class Chopper
   def chop(number, array)
-    -1
+    (array.empty?)? -1 : array.index(number)
   end
 end
