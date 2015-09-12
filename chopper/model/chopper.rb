@@ -1,4 +1,5 @@
 require_relative 'array'
+require_relative 'integer'
 
 class Chopper
   
@@ -11,7 +12,8 @@ class Chopper
   end
 
   def sum(array)
-  	suma= array.sum
-    suma.to_s.split(//).map {|x| @numbers_s[x.to_i]}.join(',')
+  	digitos= array.sum.to_array_i
+  	(digitos.length == 3)? 'demasiado grande' :
+      (digitos.map {|x| @numbers_s[x]}.join(','))
   end
 end
