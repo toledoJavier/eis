@@ -4,7 +4,7 @@ require_relative 'integer'
 class Chopper
   
   def initialize
-    @numbers_s= ['vacio','uno',nil,nil,'cuatro',nil,nil,nil,'ocho','nueve']
+    @numbers_s= ['cero','uno','dos','tres','cuatro','cinco','seis','siete','ocho','nueve']
   end
 
   def chop(number, array)
@@ -12,6 +12,7 @@ class Chopper
   end
 
   def sum(array)
+    if array.empty? then return 'vacio' end
   	digitos= array.sum.to_array_i
   	(digitos.length == 3)? 'demasiado grande' :
       digitos.map {|x| @numbers_s[x]}.join(',')
