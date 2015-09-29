@@ -18,4 +18,10 @@ describe 'Ronda' do
     allow(jugador2).to receive(:gana?).with(jugador1) { true }
     expect(ronda.ganador?).to eq jugador2
   end
+
+  it 'El metodo ganador? retorna [jugador1, jugador2] ya que empatan' do
+    allow(jugador1).to receive(:gana?).with(jugador2) { false }
+    allow(jugador2).to receive(:gana?).with(jugador1) { false }
+    expect(ronda.ganador?).to eq [jugador1, jugador2]
+  end
 end
