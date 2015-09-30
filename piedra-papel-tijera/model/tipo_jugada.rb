@@ -19,6 +19,7 @@ class Piedra
 end
 
 class Papel
+  include TipoJugada
   def gana_a?(otro_tipo) 
   	otro_tipo.sos_piedra? 
   end
@@ -29,8 +30,12 @@ class Papel
   def sos_tijera?() false end
 end
 
+class Tijera
+	include TipoJugada
+
+	def sos_tijera?() true end
+end
+
 class Mono
 end
 
-class Tijera
-end
