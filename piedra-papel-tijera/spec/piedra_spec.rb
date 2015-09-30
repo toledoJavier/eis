@@ -26,4 +26,8 @@ describe 'Piedra' do
   it 'Metodo gana_a? retorna false, porque piedra empata con piedra' do
     expect(piedra.gana_a?(piedra)).to eq false
   end
+
+  it 'Metodo sos_piedra? retorna true' do
+    expect(piedra.sos_piedra?).to eq true
+  end
 end
