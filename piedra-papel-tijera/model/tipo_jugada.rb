@@ -31,9 +31,12 @@ class Papel
 end
 
 class Tijera
-	include TipoJugada
+  include TipoJugada
 
-	def sos_tijera?() true end
+  def sos_tijera?() true end
+  def sos_papel?() false end
+  def sos_piedra?() false end
+  def sos_mono?() false end
 end
 
 class Mono
