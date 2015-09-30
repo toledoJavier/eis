@@ -42,5 +42,7 @@ class Tijera
 end
 
 class Mono
+  include TipoJugada
+  def sos_mono?() true end
 end
 
