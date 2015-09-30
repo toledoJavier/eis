@@ -8,6 +8,7 @@ end
 
 class Piedra 
   include TipoJugada
+  
   def gana_a?(otro_tipo) 
   	otro_tipo.sos_tijera? 
   end
@@ -20,10 +21,11 @@ end
 
 class Papel
   include TipoJugada
+  
   def gana_a?(otro_tipo) 
   	otro_tipo.sos_piedra? 
   end
-
+  
   def sos_papel?() true end
   def sos_piedra?() false end
   def sos_mono?() false end
@@ -32,9 +34,11 @@ end
 
 class Tijera
   include TipoJugada
+  
   def gana_a?(otro_tipo) 
   	otro_tipo.sos_papel? || otro_tipo.sos_mono?
   end
+  
   def sos_tijera?() true end
   def sos_papel?() false end
   def sos_piedra?() false end
@@ -43,6 +47,7 @@ end
 
 class Mono
   include TipoJugada
+  
   def gana_a?(otro_tipo) 
   	otro_tipo.sos_papel? 
   end
