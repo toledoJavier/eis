@@ -30,4 +30,10 @@ describe 'Jugador' do
     jugador1.mono
     expect(jugador1.eleccion).to be_a Mono
   end
+
+  it 'jugador1 elige piedra, jugador2 papel, metodo gana? retorna false' do
+    jugador1.piedra
+    jugador2.papel
+    expect(jugador1.gana?(jugador2)).to eq false
+  end
 end

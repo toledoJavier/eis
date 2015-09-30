@@ -26,4 +26,9 @@ class Jugador
   def mono
     @eleccion= Mono.new
   end
+  
+  #Retorna true si le gana al jugador dado por parametro.
+  def gana?(otro_jugador)
+  	@eleccion.gana_a? otro_jugador.eleccion
+  end
 end
