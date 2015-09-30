@@ -30,4 +30,12 @@ describe 'Piedra' do
   it 'Metodo sos_piedra? retorna true' do
     expect(piedra.sos_piedra?).to eq true
   end
+
+  it 'Metodo sos_papel? retorna false' do
+    expect(piedra.sos_papel?).to eq false
+  end
+
+  it 'Metodo sos_mono? retorna false' do
+    expect(piedra.sos_mono?).to eq false
+  end
 end
