@@ -43,6 +43,10 @@ end
 
 class Mono
   include TipoJugada
+  def gana_a?(otro_tipo) 
+  	otro_tipo.sos_papel? 
+  end
+
   def sos_mono?() true end
   def sos_tijera?() false end
   def sos_papel?() false end
