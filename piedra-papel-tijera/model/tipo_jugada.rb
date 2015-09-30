@@ -20,6 +20,9 @@ end
 
 class Papel
   def sos_papel?() true end
+  def sos_piedra?() false end
+  def sos_mono?() false end
+  def sos_tijera?() false end
 end
 
 class Mono
