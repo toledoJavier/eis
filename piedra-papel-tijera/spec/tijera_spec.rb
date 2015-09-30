@@ -27,4 +27,8 @@ describe 'Tijera' do
     allow(piedra).to receive(:sos_mono?) { false }
     expect(tijera.gana_a?(piedra)).to eq false
   end
+
+  it 'Metodo gana_a? retorna false, porque tijera empata con tijera' do
+    expect(tijera.gana_a?(tijera)).to eq false
+  end
 end
