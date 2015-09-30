@@ -44,5 +44,8 @@ end
 class Mono
   include TipoJugada
   def sos_mono?() true end
+  def sos_tijera?() false end
+  def sos_papel?() false end
+  def sos_piedra?() false end
 end
 
