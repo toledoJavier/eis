@@ -1,0 +1,24 @@
+module TipoJugada
+  def gana_a?(tipo_jugada) raise NotImplementedError end
+  def sos_tijera?() raise NotImplementedError end
+  
+end
+
+class Piedra 
+  include TipoJugada
+  def gana_a?(otro_tipo) 
+  	otro_tipo.sos_tijera? 
+  end
+  
+  def sos_tijera?() false end
+ 
+end
+
+class Papel
+end
+
+class Mono
+end
+
+class Tijera
+end
