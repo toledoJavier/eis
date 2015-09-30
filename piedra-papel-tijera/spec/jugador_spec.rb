@@ -25,4 +25,9 @@ describe 'Jugador' do
     jugador1.tijera
     expect(jugador1.eleccion).to be_a Tijera
   end
+
+  it 'jugador elige mono, metodo eleccion retorna mono' do
+    jugador1.mono
+    expect(jugador1.eleccion).to be_a Mono
+  end
 end

@@ -21,4 +21,9 @@ class Jugador
   def tijera
     @eleccion= Tijera.new
   end
+
+  #Guarda como eleccion un objeto Mono
+  def mono
+    @eleccion= Mono.new
+  end
 end
