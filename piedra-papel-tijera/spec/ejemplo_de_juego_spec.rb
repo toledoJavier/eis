@@ -15,17 +15,24 @@ describe 'Partida' do
     jugador1.piedra
     jugador2.tijera
     partida.guardar_resultado_ronda ronda1.ganador?
+    
+    #por ahora gana jugador1
+    expect(partida.ganador?).to eq jugador1
 
     ronda2= Ronda.new(jugador1, jugador2)
-    jugador1.mono
+    jugador1.papel
     jugador2.mono
     partida.guardar_resultado_ronda ronda2.ganador?
     
+    #por ahora hay empate
+    expect(partida.ganador?).to eq [jugador1, jugador2]
+
     ronda3= Ronda.new(jugador1, jugador2)
     jugador1.papel
     jugador2.piedra
     partida.guardar_resultado_ronda ronda3.ganador?
-
+    
+    #gana jugador1
     expect(partida.ganador?).to eq jugador1
   end
 end

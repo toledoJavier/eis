@@ -25,7 +25,7 @@ class Partida
   #Recibe un array con cada resultado de cada ronda, un hash con
   #ganador=>cantidad de veces que gano y retorna true si hay empate.
   def hay_empate?(ganador_cant)
-    @resultados_rondas.all? {|x| ganador_cant[x] == 1} || @resultados_rondas.all? {|x| x.kind_of?(Array)}
+    (se_jugo_mas_de_dos_rondas && cada_jugador_gano_una_ronda(ganador_cant)) || empataron_todas_las_rondas
   end
   
   #Recibe un array con cada resultado de cada ronda, un hash con
@@ -38,5 +38,18 @@ class Partida
     else
       posible_ganador
     end
+  end
+
+  private 
+  def se_jugo_mas_de_dos_rondas
+    @resultados_rondas.size >= 2
+  end
+
+  def cada_jugador_gano_una_ronda(ganador_cant)
+  	@resultados_rondas.all? {|x| ganador_cant[x] == 1}
+  end
+
+  def empataron_todas_las_rondas
+  	@resultados_rondas.all? {|x| x.kind_of?(Array)}
   end
 end
