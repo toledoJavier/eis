@@ -36,4 +36,28 @@ describe 'Jugador' do
     jugador2.papel
     expect(jugador1.gana?(jugador2)).to eq false
   end
+
+  it 'jugador1 elige tijera, jugador2 papel, metodo gana? retorna true' do
+    jugador1.tijera
+    jugador2.papel
+    expect(jugador1.gana?(jugador2)).to eq true
+  end
+  
+  it 'jugador1 elige tijera, jugador2 mono, metodo gana? retorna true' do
+    jugador1.tijera
+    jugador2.mono
+    expect(jugador1.gana?(jugador2)).to eq true
+  end
+
+  it 'jugador1 elige mono, jugador2 piedra, metodo gana? retorna false por que empatan' do
+    jugador1.mono
+    jugador2.piedra
+    expect(jugador1.gana?(jugador2)).to eq false
+  end
+
+  it 'jugador1 elige piedra, jugador2 piedra, metodo gana? retorna false por que empatan' do
+    jugador1.piedra
+    jugador2.piedra
+    expect(jugador1.gana?(jugador2)).to eq false
+  end
 end
