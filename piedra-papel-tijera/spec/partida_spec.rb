@@ -19,9 +19,9 @@ describe 'Partida' do
   	allow(ronda1).to receive(:ganador?) { jugador1 }
     allow(ronda2).to receive(:ganador?) { jugador2 }
     allow(ronda3).to receive(:ganador?) { jugador1 }
-    @partida.agregar_ronda(ronda1)
-    @partida.agregar_ronda(ronda2)
-    @partida.agregar_ronda(ronda3)
+    @partida.guardar_resultado_ronda ronda1.ganador?
+    @partida.guardar_resultado_ronda ronda2.ganador?
+    @partida.guardar_resultado_ronda ronda3.ganador?
     expect(@partida.ganador?).to eq jugador1
   end
 
@@ -29,9 +29,9 @@ describe 'Partida' do
     allow(ronda1).to receive(:ganador?) { [jugador1, jugador2] }
     allow(ronda2).to receive(:ganador?) { jugador2 }
     allow(ronda3).to receive(:ganador?) { [jugador1, jugador2] }
-    @partida.agregar_ronda(ronda1)
-    @partida.agregar_ronda(ronda2)
-    @partida.agregar_ronda(ronda3)
+    @partida.guardar_resultado_ronda ronda1.ganador?
+    @partida.guardar_resultado_ronda ronda2.ganador?
+    @partida.guardar_resultado_ronda ronda3.ganador? 
     expect(@partida.ganador?).to eq jugador2
   end
 
@@ -39,9 +39,9 @@ describe 'Partida' do
     allow(ronda1).to receive(:ganador?) { [jugador1, jugador2] }
     allow(ronda2).to receive(:ganador?) { [jugador1, jugador2] }
     allow(ronda3).to receive(:ganador?) { [jugador1, jugador2] }
-    @partida.agregar_ronda(ronda1)
-    @partida.agregar_ronda(ronda2)
-    @partida.agregar_ronda(ronda3)
+    @partida.guardar_resultado_ronda ronda1.ganador?
+    @partida.guardar_resultado_ronda ronda2.ganador?
+    @partida.guardar_resultado_ronda ronda3.ganador?
     expect(@partida.ganador?).to eq [jugador1, jugador2]
   end
 
@@ -49,9 +49,9 @@ describe 'Partida' do
     allow(ronda1).to receive(:ganador?) { jugador2 }
     allow(ronda2).to receive(:ganador?) { [jugador1, jugador2] }
     allow(ronda3).to receive(:ganador?) { jugador1 }
-    @partida.agregar_ronda(ronda1)
-    @partida.agregar_ronda(ronda2)
-    @partida.agregar_ronda(ronda3)
+    @partida.guardar_resultado_ronda ronda1.ganador?
+    @partida.guardar_resultado_ronda ronda2.ganador?
+    @partida.guardar_resultado_ronda ronda3.ganador?
     expect(@partida.ganador?).to eq [jugador1, jugador2]
   end
 end

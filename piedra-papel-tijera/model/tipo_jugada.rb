@@ -1,8 +1,17 @@
 module TipoJugada
+  #Retorna true si le gana al otro TipoJugada dado por parametro
   def gana_a?(tipo_jugada) raise NotImplementedError end
+
+  #Retorna true si es de tipo Tijera	
   def sos_tijera?() raise NotImplementedError end
+
+  #Retorna true si es de tipo Piedra
   def sos_piedra?() raise NotImplementedError end
+  
+  #Retorna true si es de tipo Papel
   def sos_papel?() raise NotImplementedError end
+  
+  #Retorna true si es de tipo Mono
   def sos_mono?() raise NotImplementedError end
 end
 

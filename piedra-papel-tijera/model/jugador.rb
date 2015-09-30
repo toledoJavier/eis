@@ -1,8 +1,11 @@
+require_relative '../model/tipo_jugada'
+
 class Jugador
   def initialize
     @eleccion= nil
   end
-
+  
+  #Retorna la eleccion del jugador, nil si aun no la hizo
   def eleccion
     @eleccion
   end

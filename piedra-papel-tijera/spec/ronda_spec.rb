@@ -24,4 +24,13 @@ describe 'Ronda' do
     allow(jugador2).to receive(:gana?).with(jugador1) { false }
     expect(ronda.ganador?).to eq [jugador1, jugador2]
   end
+
+  it 'Prueba de una ronda donde gana jugador1' do
+    un_jugador= Jugador.new
+    otro_jugador= Jugador.new
+    ronda= Ronda.new(un_jugador, otro_jugador)
+    un_jugador.piedra
+    otro_jugador.tijera
+    expect(ronda.ganador?).to eq un_jugador
+  end
 end
