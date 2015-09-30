@@ -19,6 +19,10 @@ class Piedra
 end
 
 class Papel
+  def gana_a?(otro_tipo) 
+  	otro_tipo.sos_piedra? 
+  end
+
   def sos_papel?() true end
   def sos_piedra?() false end
   def sos_mono?() false end
