@@ -31,4 +31,16 @@ describe 'Tijera' do
   it 'Metodo gana_a? retorna false, porque tijera empata con tijera' do
     expect(tijera.gana_a?(tijera)).to eq false
   end
+
+  it 'Metodo gana_a? retorna true, porque tijera le gana a papel' do
+    allow(piedra).to receive(:sos_papel?) { true }
+    allow(piedra).to receive(:sos_mono?) { false }
+    expect(tijera.gana_a?(piedra)).to eq true
+  end
+
+  it 'Metodo gana_a? retorna true, porque tijera le gana a mono' do
+    allow(piedra).to receive(:sos_papel?) { false }
+    allow(piedra).to receive(:sos_mono?) { true }
+    expect(tijera.gana_a?(piedra)).to eq true
+  end
 end
