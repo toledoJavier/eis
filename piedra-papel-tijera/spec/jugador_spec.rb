@@ -10,4 +10,9 @@ describe 'Jugador' do
   it 'jugador se crea sin ninguna eleccion' do
     expect(jugador1.eleccion).to eq nil
   end
+
+  it 'jugador elige piedra, metodo eleccion retorna piedra' do
+    jugador1.piedra
+    expect(jugador1.eleccion).to be_a Piedra
+  end
 end

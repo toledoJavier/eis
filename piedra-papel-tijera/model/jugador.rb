@@ -6,4 +6,8 @@ class Jugador
   def eleccion
     @eleccion
   end
+
+  def piedra
+    @eleccion= Piedra.new
+  end
 end
