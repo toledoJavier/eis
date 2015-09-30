@@ -25,7 +25,7 @@ class Partida
   #Recibe un array con cada resultado de cada ronda, un hash con
   #ganador=>cantidad de veces que gano y retorna true si hay empate
   def hay_empate?(resultados, ganador_cant)
-    ganador_cant.all? {|x| ganador_cant[x] == 1} || resultados.all? {|x| x.kind_of?(Array)}
+    resultados.all? {|x| ganador_cant[x] == 1} || resultados.all? {|x| x.kind_of?(Array)}
   end
   
   #Recibe un array con cada resultado de cada ronda, un hash con

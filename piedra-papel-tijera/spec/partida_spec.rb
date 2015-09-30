@@ -44,4 +44,14 @@ describe 'Partida' do
     @partida.agregar_ronda(ronda3)
     expect(@partida.ganador?).to eq [jugador1, jugador2]
   end
+
+  it 'Cada jugador gana una ronda y empatan la otra, ganador? retorna empate [jugador1, jugador2]' do
+    allow(ronda1).to receive(:ganador?) { jugador2 }
+    allow(ronda2).to receive(:ganador?) { [jugador1, jugador2] }
+    allow(ronda3).to receive(:ganador?) { jugador1 }
+    @partida.agregar_ronda(ronda1)
+    @partida.agregar_ronda(ronda2)
+    @partida.agregar_ronda(ronda3)
+    expect(@partida.ganador?).to eq [jugador1, jugador2]
+  end
 end
