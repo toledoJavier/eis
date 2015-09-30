@@ -15,4 +15,9 @@ describe 'Jugador' do
     jugador1.piedra
     expect(jugador1.eleccion).to be_a Piedra
   end
+
+  it 'jugador elige papel, metodo eleccion retorna papel' do
+    jugador1.papel
+    expect(jugador1.eleccion).to be_a Papel
+  end
 end
