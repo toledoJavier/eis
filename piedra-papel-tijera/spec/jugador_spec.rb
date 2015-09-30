@@ -20,4 +20,9 @@ describe 'Jugador' do
     jugador1.papel
     expect(jugador1.eleccion).to be_a Papel
   end
+
+  it 'jugador elige tijera, metodo eleccion retorna tijera' do
+    jugador1.tijera
+    expect(jugador1.eleccion).to be_a Tijera
+  end
 end

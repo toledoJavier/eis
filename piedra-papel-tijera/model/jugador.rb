@@ -16,4 +16,9 @@ class Jugador
   def papel
     @eleccion= Papel.new
   end
+
+  #Guarda como eleccion un objeto Tijera
+  def tijera
+    @eleccion= Tijera.new
+  end
 end
