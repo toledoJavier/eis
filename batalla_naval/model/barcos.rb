@@ -1,0 +1,2 @@
+class Submarino
+end
