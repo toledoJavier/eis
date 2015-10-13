@@ -1,3 +1,5 @@
+require_relative '../model/agua'
+
 class Tablero
   def initialize
     @posiciones= Hash.new
