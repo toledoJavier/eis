@@ -10,7 +10,10 @@ class BatallaNaval
   end
   
   def colocar_barco_en(posicion, tipo_barco, direccion)
-  	puts @barcos[tipo_barco]
     @tablero.colocar_barco_en(posicion, @barcos[tipo_barco], direccion)
+  end
+
+  def contenido_de_la_posicion(posicion)
+    @tablero.contenido_de_la_posicion posicion
   end
 end

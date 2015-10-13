@@ -5,17 +5,23 @@ require_relative '../model/barcos'
 
 describe 'BatallaNaval' do
   let(:batalla_naval) { BatallaNaval.new }
-  let(:tablero) { spy(Tablero) }
+  let(:tablero_spy) { spy(Tablero)}
+  let(:tablero_double) { double(Tablero) }
   let(:submarino) { double(Submarino)}
   
   before(:each) do 
-    batalla_naval.tablero= tablero
     batalla_naval.barcos= {"submarino" => submarino}
   end
 
   it 'Al llamar al metod colocar_barco_en en A3, este lo delega a tablero' do
-  	puts batalla_naval.barcos
+  	batalla_naval.tablero= tablero_spy
   	batalla_naval.colocar_barco_en("A3", "submarino", "horizontal")
-  	expect(tablero).to have_received(:colocar_barco_en).with("A3", submarino, "horizontal") 
+  	expect(tablero_spy).to have_received(:colocar_barco_en).with("A3", submarino, "horizontal") 
+  end
+
+  it 'Al llamar al metod contenido_de_la_posicion en A3, este lo delega a tablero y retorna, en este caso submarino ' do
+  	batalla_naval.tablero= tablero_double
+  	allow(tablero_double).to receive(:contenido_de_la_posicion).with("A3") { submarino }
+  	expect(batalla_naval.contenido_de_la_posicion("A3")).to eq submarino
   end
 end
