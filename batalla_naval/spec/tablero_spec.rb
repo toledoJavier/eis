@@ -34,11 +34,15 @@ describe 'Tablero' do
     expect{tablero.colocar_barco_en("A11", crucero_double, "horizontal")}.to raise_error(PosicionInvalidaException)
   end
 
-  it 'Disparo en J11, este delega responsabilidad a Agua y retorna el resultado' do
+  it 'Disparo en J10, este delega responsabilidad a Agua y retorna el resultado' do
     posiciones_double= double(Hash)
     tablero.posiciones= posiciones_double
-    allow(posiciones_double).to receive(:[]).with("J11") { agua }
+    allow(posiciones_double).to receive(:[]).with("J10") { agua }
     allow(agua).to receive(:recibir_disparo) { "Agua" }
-    expect(tablero.disparar_en("J11")).to eq "Agua"
+    expect(tablero.disparar_en("J10")).to eq "Agua"
+  end
+
+  it 'disparo en J11, como es una posicion invalida me retorna PosicionInvalidaException' do
+    expect{ tablero.disparar_en("J11") }.to raise_error(PosicionInvalidaException)
   end
 end

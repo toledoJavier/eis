@@ -25,8 +25,8 @@ describe 'BatallaNaval' do
   	expect(batalla_naval.contenido_de_la_posicion("A3")).to eq submarino
   end
 
-  it 'Disparo en J11, este lo delega a tablero y deberia retornar Agua' do
-    allow(tablero_double).to receive(:disparar_en).with("J11") { "Agua" }
-    expect(batalla_naval.disparar_en("J11")).to eq "Agua"
+  it 'Disparo en J10, este lo delega a tablero y deberia retornar Agua' do
+    allow(tablero_double).to receive(:disparar_en).with("J10") { "Agua" }
+    expect(batalla_naval.disparar_en("J10")).to eq "Agua"
   end
 end

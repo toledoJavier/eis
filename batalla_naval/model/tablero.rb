@@ -27,7 +27,10 @@ class Tablero
     end
   end
   
+  #Dispara en la posicion dada si es valida y retorna el resultado.
+  #ver recibir disparo en items_del_tablero para saber los distintos mensajes de retornos.
   def disparar_en(posicion)
+    validar_posicion posicion
     contenido_de_la_posicion(posicion).recibir_disparo
   end
 

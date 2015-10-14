@@ -2,7 +2,7 @@ Feature: Como usuario quiero disparar a los barcos enemigos
 
   Scenario: Disparo y toco agua
     Given una batalla naval sin ningun tipo de barco
-    When hago un disparo en J11
+    When hago un disparo en J10
     Then toco agua
   
   Scenario: Disparo y toco un barco pero no lo hundo
