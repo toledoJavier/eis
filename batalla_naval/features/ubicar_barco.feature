@@ -5,7 +5,6 @@ Feature: Como usuario quiero ubicar mis barcos
     When ubico un submarino en A3
     Then se posiciona correctamente
   
-  @wip
   Scenario: No se puede ubicar un barco en una posición ya ocupada
     Given una batalla naval con un crucero horizontal en F4
     When intento ubicar un destructor vertical en E4
