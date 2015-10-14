@@ -1,0 +1,2 @@
+class PosicionOcupadaException < Exception
+end
