@@ -1,4 +1,4 @@
-require_relative '../model/agua'
+require_relative '../model/items_del_tablero'
 require_relative '../model/excepciones'
 require_relative 'extensiones/array'
 require_relative 'extensiones/string'

@@ -22,4 +22,11 @@ describe 'Barcos' do
     expect(crucero.recibir_disparo).to eq "Barco Averiado"
     expect(crucero.disparos_recibidos).to eq 1
   end
+
+  it 'barco destructor al recibir 3 disparos retorna Barco Hundido' do
+    destructor.recibir_disparo
+    destructor.recibir_disparo
+    expect(destructor.recibir_disparo).to eq "Barco Hundido"
+    expect(destructor.disparos_recibidos).to eq 3
+  end
 end

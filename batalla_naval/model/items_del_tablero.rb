@@ -3,6 +3,7 @@ class ItemDelTablero
 end
 
 class Agua < ItemDelTablero
+  #Retorna un string Agua.
   def recibir_disparo
     "Agua"
   end
@@ -15,12 +16,21 @@ class Barco < ItemDelTablero
     @tamanio= tamanio
     @disparos_recibidos= 0
   end
-
+  
+  #Suma 1 a los disparos recibidos y retorna un string indicando si esta averiado o hundido.
   def recibir_disparo
     @disparos_recibidos+= 1
-    "Barco Averiado"
+    if barco_hundido?
+      "Barco Hundido"
+    else
+      "Barco Averiado"
+    end
   end
-
+  
+  #Retorna true si el barco esta hundido.
+  def barco_hundido?
+    @tamanio == @disparos_recibidos
+  end
 end
 
 class Submarino < Barco

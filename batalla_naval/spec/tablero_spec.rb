@@ -1,7 +1,6 @@
 require 'rspec'
 require_relative '../model/tablero'
-require_relative '../model/barcos'
-require_relative '../model/agua'
+require_relative '../model/items_del_tablero'
 require_relative '../model/excepciones'
 
 describe 'Tablero' do
