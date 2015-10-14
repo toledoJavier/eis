@@ -9,7 +9,8 @@ describe 'Tablero' do
   let(:submarino_double) { double(Submarino)}
   let(:crucero_double) { double(Crucero)}
   let(:destructor_double) { double(Destructor)}
-  
+  let(:agua) { double(Agua)}
+
   before(:each) do
     allow(submarino_double).to receive(:tamanio) { 1 }
     allow(crucero_double).to receive(:tamanio) { 2 }
@@ -32,5 +33,13 @@ describe 'Tablero' do
   
   it 'no se puede colocar un barco en una posicion fuera del tablero' do
     expect{tablero.colocar_barco_en("A11", crucero_double, "horizontal")}.to raise_error(PosicionInvalidaException)
+  end
+
+  it 'Disparo en J11, este delega responsabilidad a Agua y retorna el resultado' do
+    posiciones_double= double(Hash)
+    tablero.posiciones= posiciones_double
+    allow(posiciones_double).to receive(:[]).with("J11") { agua }
+    allow(agua).to receive(:recibir_disparo) { "Agua" }
+    expect(tablero.disparar_en("J11")).to eq "Agua"
   end
 end

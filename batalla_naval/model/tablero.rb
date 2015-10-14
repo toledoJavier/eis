@@ -4,6 +4,8 @@ require_relative 'extensiones/array'
 require_relative 'extensiones/string'
 
 class Tablero
+  attr_accessor :posiciones
+
   def initialize
     @posiciones= Hash.new
     @posiciones.default= Agua.new
@@ -23,6 +25,10 @@ class Tablero
     else
       raise PosicionOcupadaException.new
     end
+  end
+  
+  def disparar_en(posicion)
+    contenido_de_la_posicion(posicion).recibir_disparo
   end
 
   private
