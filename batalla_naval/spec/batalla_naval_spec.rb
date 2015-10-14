@@ -2,13 +2,14 @@ require 'rspec'
 require_relative '../model/batalla_naval'
 require_relative '../model/tablero'
 require_relative '../model/barcos'
+require_relative '../model/agua'
 
 describe 'BatallaNaval' do
   let(:batalla_naval) { BatallaNaval.new }
   let(:tablero_spy) { spy(Tablero)}
   let(:tablero_double) { double(Tablero) }
   let(:submarino) { double(Submarino)}
-  
+
   before(:each) do 
     batalla_naval.barcos= {"submarino" => submarino}
   end
@@ -23,5 +24,11 @@ describe 'BatallaNaval' do
   	batalla_naval.tablero= tablero_double
   	allow(tablero_double).to receive(:contenido_de_la_posicion).with("A3") { submarino }
   	expect(batalla_naval.contenido_de_la_posicion("A3")).to eq submarino
+  end
+
+  it 'Disparo en J11, este lo delega a tablero y deberia retornar Agua' do
+    batalla_naval.tablero= tablero_double
+    allow(tablero_double).to receive(:disparar_en).with("J11") { "Agua" }
+    expect(batalla_naval.disparar_en("J11")).to eq "Agua"
   end
 end

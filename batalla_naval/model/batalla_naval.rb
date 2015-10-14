@@ -20,4 +20,10 @@ class BatallaNaval
   def contenido_de_la_posicion(posicion)
     @tablero.contenido_de_la_posicion posicion
   end
+  
+  #Retorna el resultado de haber disparado a la posicion dada del tablero.
+  #ver disparar_en de la clase Tablero
+  def disparar_en(posicion)
+    @tablero.disparar_en posicion
+  end
 end
