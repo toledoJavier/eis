@@ -17,6 +17,7 @@ class Tablero
   #Coloca un barco en las posicion y direccion dada, en caso de que alguna posicion este ocupada lanza una excepcion.
   def colocar_barco_en(posicion, tipo_barco, direccion)
   	posiciones_a_ocupar= calcular_posiciones(posicion, tipo_barco.tamanio, direccion)
+    validar_posiciones posiciones_a_ocupar
     if posiciones_libres? posiciones_a_ocupar
       posiciones_a_ocupar.map {|p| @posiciones[p]= tipo_barco}
     else
@@ -55,5 +56,29 @@ class Tablero
     filas= posicion_inicial[0].to_array_with_next tamanio_barco
     columnas= posicion_inicial[1..-1].repeat_in_array tamanio_barco
     filas.concat_position columnas
+  end
+  
+  #Lanza una excepcion si alguna de las posiciones que contiene el array no pertenece al tablero.
+  def validar_posiciones(posiciones)
+    posiciones.map {|p| validar_posicion p}
+  end
+  
+  #Lanza una excepcion si la posicion dada no pertenece al tablero.
+  def validar_posicion(posicion)
+    fila= posicion[0]
+    columna= posicion[1..-1].to_i
+    if ! (fila_valida(fila) && columna_valida(columna))
+      raise PosicionInvalidaException.new
+    end
+  end
+  
+  #Retorna true si la fila dada pertenece al tablero.
+  def fila_valida(fila)
+    (fila >= "A" && fila <= "J")
+  end
+  
+  #Retorna true si la columna dada pertenece al tablero.
+  def columna_valida(columna)
+    (columna >= 1 && columna <= 10)
   end
 end

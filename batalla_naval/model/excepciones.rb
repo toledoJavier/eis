@@ -1,2 +1,5 @@
-class PosicionOcupadaException < Exception
+class PosicionOcupadaException < Exception 
+end
+
+class PosicionInvalidaException < Exception 
 end

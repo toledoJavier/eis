@@ -29,5 +29,8 @@ describe 'Tablero' do
     tablero.colocar_barco_en("F4", crucero_double, "horizontal")
     expect{tablero.colocar_barco_en("E4", destructor_double, "vertical")}.to raise_error(PosicionOcupadaException)
   end
-
+  
+  it 'no se puede colocar un barco en una posicion fuera del tablero' do
+    expect{tablero.colocar_barco_en("A11", crucero_double, "horizontal")}.to raise_error(PosicionInvalidaException)
+  end
 end

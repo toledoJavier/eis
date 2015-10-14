@@ -27,3 +27,19 @@ end
 Then(/^no se posiciona por que la posicion (\w\d+) esta ocupada$/) do |posicion|
   expect(@posicion_ocupada_e).to be_a PosicionOcupadaException
 end
+
+Given(/^una batalla naval de (\d+)x(\d+)$/) do |arg1, arg2|
+  @batalla_naval= BatallaNaval.new
+end
+
+When(/^intento ubicar un crucero en la posicion (\w\d+)$/) do |posicion|
+  begin
+    @batalla_naval.colocar_barco_en(posicion, "crucero", "vertical")
+  rescue PosicionInvalidaException => e
+    @posicion_invalida_e = e
+  end
+end
+
+Then(/^no se posiciona por que esta fuera del tablero$/) do
+  expect(@posicion_invalida_e).to be_a PosicionInvalidaException
+end

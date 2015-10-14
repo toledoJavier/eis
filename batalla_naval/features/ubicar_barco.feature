@@ -10,7 +10,6 @@ Feature: Como usuario quiero ubicar mis barcos
     When intento ubicar un destructor vertical en E4
     Then no se posiciona por que la posicion F4 esta ocupada
   
-  @wip
   Scenario: No puedo ubicar mi barco en una posición fuera del tablero
     Given una batalla naval de 10x10
     When intento ubicar un crucero en la posicion A11
