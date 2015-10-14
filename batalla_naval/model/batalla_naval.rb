@@ -6,7 +6,7 @@ class BatallaNaval
 
   def initialize
     @tablero= Tablero.new
-    @barcos= {"submarino" => Submarino.new}
+    @barcos= {"submarino" => Submarino.new, "crucero" => Crucero.new, "destructor" => Destructor.new}
   end
   
   def colocar_barco_en(posicion, tipo_barco, direccion)
