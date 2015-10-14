@@ -1,4 +1,5 @@
 require_relative "../../model/batalla_naval"
+
 Given(/^una batalla naval sin barcos$/) do
   @batalla_naval= BatallaNaval.new
 end

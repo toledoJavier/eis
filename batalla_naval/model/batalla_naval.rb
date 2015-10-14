@@ -1,5 +1,5 @@
 require_relative 'tablero'
-require_relative 'barcos'
+require_relative 'items_del_tablero'
 
 class BatallaNaval
   attr_accessor :tablero, :barcos

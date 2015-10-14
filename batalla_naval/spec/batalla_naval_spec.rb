@@ -11,6 +11,7 @@ describe 'BatallaNaval' do
   let(:submarino) { double(Submarino)}
 
   before(:each) do 
+    batalla_naval.tablero= tablero_double
     batalla_naval.barcos= {"submarino" => submarino}
   end
 
@@ -21,13 +22,11 @@ describe 'BatallaNaval' do
   end
 
   it 'Al llamar al metod contenido_de_la_posicion en A3, este lo delega a tablero y retorna, en este caso submarino ' do
-  	batalla_naval.tablero= tablero_double
   	allow(tablero_double).to receive(:contenido_de_la_posicion).with("A3") { submarino }
   	expect(batalla_naval.contenido_de_la_posicion("A3")).to eq submarino
   end
 
   it 'Disparo en J11, este lo delega a tablero y deberia retornar Agua' do
-    batalla_naval.tablero= tablero_double
     allow(tablero_double).to receive(:disparar_en).with("J11") { "Agua" }
     expect(batalla_naval.disparar_en("J11")).to eq "Agua"
   end
