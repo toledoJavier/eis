@@ -15,3 +15,7 @@ cd ..
 cd batalla_naval
 bundle install
 bundle exec rake
+cd ..
+cd calculadora
+bundle install
+bundle exec rake
