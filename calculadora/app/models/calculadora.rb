@@ -1,4 +1,10 @@
 class Calculadora
+  attr_accessor :memoria
+
+  def initialize
+    @memoria= Memoria.new
+  end
+
   def sumar(operando, otro_operando)
     operando + otro_operando
   end
@@ -9,5 +15,9 @@ class Calculadora
 
   def promedio(operando, otro_operando)
   	(operando + otro_operando) / 2
+  end
+
+  def cantidad_de_operaciones
+    @memoria.contador
   end
 end
