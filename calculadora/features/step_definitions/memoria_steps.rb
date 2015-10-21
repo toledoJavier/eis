@@ -20,3 +20,9 @@ Given(/^hago una resta$/) do
   click_button 'restar'
 end
 
+Given(/^reseteo la memoria$/) do
+  visit 'calculadora'
+  click_button 'resetear memoria'
+end
+
+

@@ -13,4 +13,10 @@ describe 'Memoria' do
     memoria.aumentar_uno
     expect(memoria.contador).to eq 2
   end
+
+  it 'luego de aumentar_uno, al indicarle que se reinicie, contador vuelve a retornar 0' do
+    memoria.aumentar_uno
+    memoria.reiniciar
+    expect(memoria.reiniciar).to eq 0
+  end
 end

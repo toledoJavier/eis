@@ -12,4 +12,9 @@ class Memoria
   def contador
     @contador
   end
+  
+  #Pone el contador en su estado inicial que es cero
+  def reiniciar
+    @contador= 0
+  end
 end

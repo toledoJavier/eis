@@ -17,5 +17,9 @@
     Resultado: <%= @resultado %>
     <br>
     Operaciones realizadas: <%= @cantidad_de_operaciones %>
+    <form method="POST" action="resetear_memoria">
+      <%= csrf_token_field %>
+      <input type="submit" id="resetear memoria" value="Resetear Memoria">
+    </form>
   </body>
 </html>

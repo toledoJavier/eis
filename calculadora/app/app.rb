@@ -36,5 +36,10 @@ module Ejemplo
       @cantidad_de_operaciones= @@calculadora.cantidad_de_operaciones
       render 'calculadora'
     end
+
+    post 'resetear_memoria' do
+      @@calculadora.resetear_memoria
+      redirect_to 'calculadora'
+    end
   end
 end
