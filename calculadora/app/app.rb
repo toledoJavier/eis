@@ -1,5 +1,3 @@
-#require_relative 'algunmodelo?'
-require_relative 'models/calculadora'
 module Ejemplo
   class App < Padrino::Application
     register Padrino::Rendering
