@@ -30,4 +30,10 @@ describe 'Calculadora' do
   	calculadora.sumar 4, 5
     expect(memoria_spy).to have_received(:aumentar_uno)
   end
+
+  it 'cuando se le dice resetear_memoria, se lo delega a memoria' do
+    calculadora.memoria= memoria_spy
+  	calculadora.resetear_memoria
+    expect(memoria_spy).to have_received(:reiniciar)
+  end
 end
