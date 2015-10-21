@@ -1,7 +1,15 @@
 class Memoria
-  def aumentar_uno() end
+  def initialize
+    @contador= 0
+  end
 
+  #Aumenta en uno el valor del contador
+  def aumentar_uno
+    @contador+= 1
+  end
+  
+  #Retorna el valor del contador
   def contador
-    0
+    @contador
   end
 end
