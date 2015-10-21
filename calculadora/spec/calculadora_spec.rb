@@ -11,4 +11,8 @@ describe 'Calculadora' do
   it 'restar 8 y 3, es 5' do
   	expect(calculadora.restar(8, 3)).to eq 5
   end
+
+  it 'promedio de 6 y 8, es 7' do
+    expect(calculadora.promedio(6, 8)).to eq 7
+  end
 end

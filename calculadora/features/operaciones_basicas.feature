@@ -12,14 +12,6 @@ Feature: Operaciones basicas
     When los resto
     Then el resultado es 5  
   
-  @wip
-  Scenario: resta resultado negativo
-    Given un operando es 5
-    And otro operando es 7
-    When los resto
-    Then el resultado es -2
-  
-  @wip
   Scenario: promedio
     Given un operando es 6
     And otro operando es 8

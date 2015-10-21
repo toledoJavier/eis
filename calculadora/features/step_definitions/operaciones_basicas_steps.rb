@@ -18,3 +18,7 @@ end
 When(/^los resto$/) do
   click_button 'restar'
 end
+
+When(/^los promedio$/) do
+  click_button 'promedio'
+end

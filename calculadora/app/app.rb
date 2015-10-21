@@ -31,8 +31,11 @@ module Ejemplo
       session[:accion] = params[:accion]
       if session[:accion] == 'sumar'
         @resultado= Calculadora.new.sumar(session[:operando1].to_i, session[:operando2].to_i)
-      else
+      else-if session[:accion] == 'restar'
         @resultado= Calculadora.new.restar(session[:operando1].to_i, session[:operando2].to_i)
+      else
+        @resultado= Calculadora.new.promedio(session[:operando1].to_i, session[:operando2].to_i)
+      end
       end
       render 'calculadora'
     end
