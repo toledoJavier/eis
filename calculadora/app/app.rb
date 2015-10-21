@@ -22,6 +22,7 @@ module Ejemplo
     end
     
     get 'calculadora' do
+      @cantidad_de_operaciones= 0
       render 'calculadora'
     end
 
