@@ -14,3 +14,7 @@ end
 Then(/^el resultado es (\d+)$/) do |resultado|
   expect(page).to have_content("Resultado: #{resultado}")
 end
+
+When(/^los resto$/) do
+  click_button 'restar'
+end

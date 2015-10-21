@@ -6,12 +6,11 @@ Feature: Operaciones basicas
     When los sumo
     Then el resultado es 3
   
-  @wip
   Scenario: resta
-    Given un operando es 4
-    And otro operando es 1
+    Given un operando es 8
+    And otro operando es 3
     When los resto
-    Then el resultado es 3  
+    Then el resultado es 5  
   
   @wip
   Scenario: resta resultado negativo

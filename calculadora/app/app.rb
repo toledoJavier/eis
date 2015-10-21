@@ -28,7 +28,12 @@ module Ejemplo
     post 'calculadora' do
       session[:operando1] = params[:operando1]
       session[:operando2] = params[:operando2]
-      @resultado= Calculadora.new.sumar(session[:operando1].to_i, session[:operando2].to_i)
+      session[:accion] = params[:accion]
+      if session[:accion] == 'sumar'
+        @resultado= Calculadora.new.sumar(session[:operando1].to_i, session[:operando2].to_i)
+      else
+        @resultado= Calculadora.new.restar(session[:operando1].to_i, session[:operando2].to_i)
+      end
       render 'calculadora'
     end
   end
