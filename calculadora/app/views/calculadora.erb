@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <form method="POST" action="calculadora">
+      <%= csrf_token_field %>
+      <label>Operando</label>
+      <input type="text" name="operando1" id="operando1" >
+      <label>Operando</label>
+      <input type="text" name="operando2" id="operando2" >
+      <input type="submit" name="accion" id="sumar" value="sumar">
+    </form>
+    Resultado: <%= @resultado %>
+  </body>
+</html>

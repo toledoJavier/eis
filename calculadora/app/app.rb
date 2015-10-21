@@ -20,6 +20,16 @@ module Ejemplo
       @nombre = session[:nombre]
       render 'saludo'
     end
+    
+    get 'calculadora' do
+      render 'calculadora'
+    end
 
+    post 'calculadora' do
+      session[:operando1] = params[:operando1]
+      session[:operando2] = params[:operando2]
+      @resultado= Calculadora.new.sumar(session[:operando1].to_i, session[:operando2].to_i)
+      render 'calculadora'
+    end
   end
 end
