@@ -1,11 +1,13 @@
 #require_relative 'algunmodelo?'
-
+require_relative 'models/calculadora'
 module Ejemplo
   class App < Padrino::Application
     register Padrino::Rendering
     register Padrino::Helpers
 
     enable :sessions
+    
+    @@calculadora= Calculadora.new
 
     get 'hola' do
       'hey! hola'
@@ -22,7 +24,7 @@ module Ejemplo
     end
     
     get 'calculadora' do
-      @cantidad_de_operaciones= 0
+      @cantidad_de_operaciones= @@calculadora.cantidad_de_operaciones
       render 'calculadora'
     end
 
@@ -30,7 +32,8 @@ module Ejemplo
       session[:operando1] = params[:operando1]
       session[:operando2] = params[:operando2]
       session[:accion] = params[:accion]
-      @resultado= Calculadora.new.send(session[:accion].to_sym, session[:operando1].to_i, session[:operando2].to_i)
+      @resultado= @@calculadora.send(session[:accion].to_sym, session[:operando1].to_i, session[:operando2].to_i)
+      @cantidad_de_operaciones= @@calculadora.cantidad_de_operaciones
       render 'calculadora'
     end
   end
