@@ -1,6 +1,7 @@
 # Tarea - clase 23 (18/11/2015)
 + [Leer.](www.javacodegeeks.com/2014/05/10-articles-every-programmer-must-read.html)
 + Y dar su opinion sobre cada uno de los puntos.
+
 ---
 
 ##### What Every Programmer Should Know about Memory
