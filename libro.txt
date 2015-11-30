@@ -1,0 +1,10 @@
+Título: Domain-driven design: tackling complexity in the heart of software
+
+Autor: Eric Evans
+
+Año de publicación: 2003
+
+Reseña
+
+No es un libro sobre tecnologías específicas. Se ofrece a los lectores un enfoque sistemático para el diseño de dominio impulsado, la presentación de un amplio conjunto de las mejores prácticas de diseño, técnicas basadas en la experiencia y los principios fundamentales que facilitan el desarrollo de proyectos de software. Entrelazando prácticas de diseño y desarrollo, este libro incluye numerosos ejemplos basados en proyectos reales para ilustrar la aplicación del diseño de dominio impulsado al desarrollo de software en el mundo real.
+  Los lectores aprenden cómo utilizar un modelo de dominio para hacer un esfuerzo de desarrollo complejo más centrado y dinámico. Un núcleo de las mejores prácticas y patrones estándar proporcionan un lenguaje común para el equipo de desarrollo. Un cambio en el énfasis, la refactorización no sólo del código, pero el modelo que subyace en el código, en combinación con las iteraciones frecuentes de desarrollo ágil conduce a la visión más profunda de los dominios y una mayor comunicación entre los expertos de dominio y programador.
